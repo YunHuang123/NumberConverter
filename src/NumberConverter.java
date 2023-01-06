@@ -29,19 +29,19 @@ public class NumberConverter {
 
     public int convertToDecimal() {
         int num = 0;
-        int power = 0; 3
-        if (base == 2)
-        {
-            if (number % 10 == 1)
-            {
-                num += Math.pow(2, power);
-                power ++;
-                number = number / 10;
-            }
-            else
-            {
-                power ++;
-                number = number / 10;
+        int power = 0;
+        int count = 0;
+        if (base == 2) {
+            while (count != displayOriginalNumber().length()) {
+                if (number % 10 == 1) {
+                    num += Math.pow(2, power);
+                    power++;
+                    number /= 10;
+                } else {
+                    power++;
+                    number = number / 10;
+                }
+                count ++;
             }
         }
         return num;

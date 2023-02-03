@@ -19,17 +19,41 @@ class ConverterRunner {
 
         System.out.print("Enter your number: ");
         String number = s.nextLine();
-        if (choice.equals("2"))
+        //String[] numbers = new String[number.length()];
+        boolean hasLetter = false;
+        for (int i = 0; i < number.length(); i ++)
         {
-            for (int i = 2; i < 10; i ++)
+            //numbers[i] = number.substring(i, i + 1);
+            if (Character.isLetter(number.charAt(i)))
             {
-                while (number.contains(Integer.toString(i)))
+                hasLetter = true;
+            }
+        }
+
+        if (hasLetter == false)
+        {
+            if (choice.equals("2"))
+            {
+                while (number.contains("2") || number.contains("3") || number.contains("4") || number.contains("5") || number.contains("6") || number.contains("7") || number.contains("8") || number.contains("9"))
                 {
                     System.out.println("Sorry, this number contains incorrect digit(s) for this base.");
                     System.out.print("Enter your number: ");
                     number = s.nextLine();
                 }
             }
+            if (choice.equals("8"))
+            {
+                while (number.contains("8") || number.contains("9"))
+                {
+                    System.out.println("Sorry, this number contains incorrect digit(s) for this base.");
+                    System.out.print("Enter your number: ");
+                    number = s.nextLine();
+                }
+            }
+        }
+        else
+        {
+            System.out.println("Invalid Input");
         }
         int n = Integer.parseInt(number);
 

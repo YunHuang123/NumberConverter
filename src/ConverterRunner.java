@@ -19,11 +19,10 @@ class ConverterRunner {
 
         System.out.print("Enter your number: ");
         String number = s.nextLine();
-        //String[] numbers = new String[number.length()];
         boolean hasLetter = false;
+        int n = 0;
         for (int i = 0; i < number.length(); i ++)
         {
-            //numbers[i] = number.substring(i, i + 1);
             if (Character.isLetter(number.charAt(i)))
             {
                 hasLetter = true;
@@ -50,12 +49,12 @@ class ConverterRunner {
                     number = s.nextLine();
                 }
             }
+            n = Integer.parseInt(number);
         }
         else
         {
             System.out.println("Invalid Input");
         }
-        int n = Integer.parseInt(number);
 
         s.close();
 
